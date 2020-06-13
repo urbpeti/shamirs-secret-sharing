@@ -1,2 +1,25 @@
 # shamirs-secret-sharing
 Python implementation of Shamir's Secret Sharing
+
+## Example usage
+### Encode
+
+```sh
+$ python3 encoder.py
+Enter your secret (max 50 ascii char): My Secret!
+Enter the key count: 5
+Enter the key count treshold: 3
+Generated shards:
+1-0x11fa7b9a9563f20bec5b880ff1d72ba8d31a429b20019915b6240b88f6d5ed1198e47402d58e37290f75c3cfdae31c18c29fe6ffc637e85c79882c416355245ff13
+2-0x99be7651f1726615b44855dec18c8d4980b443c1fe5010a9e88c6f6fa1ba92687d6ef96131002070a3ffde573ee4b37cbe49b47c1161f10dbf23838faf08fff27e
+3-0x6e4435f9d199d004cbaf7e9eec4d7834ed304e2ffaa37deb92e324a09d1343eccd772b9b8856099f05eae40cb218d5d1bce1cd7f09aa421fed0291d1d096934e61
+4-0x9d38f8a0f6b55e8c0bedfb3f9db57b4f771848fbf513d9206144d8225f68e5a67e5fd6dc5ee52e1c1d1d4e1e07ce288b25c6bb054c5778fe221feedc99fb0012bc
+5-0x1269cbe4760c511ab7503cbc0d5c496991e6c3425eda1224853b189f4e8bb77959028fb23b4ad8de7e9971c8b4004aba8f8f87d0ed96995a85e7b9ab00b36463f8f
+```
+
+### Decode
+```sh
+$ python decoder.py
+Enter the key shards separated by comma: 1-0x11fa7b9a9563f20bec5b880ff1d72ba8d31a429b20019915b6240b88f6d5ed1198e47402d58e37290f75c3cfdae31c18c29fe6ffc637e85c79882c416355245ff13,3-0x6e4435f9d199d004cbaf7e9eec4d7834ed304e2ffaa37deb92e324a09d1343eccd772b9b8856099f05eae40cb218d5d1bce1cd7f09aa421fed0291d1d096934e61,4-0x9d38f8a0f6b55e8c0bedfb3f9db57b4f771848fbf513d9206144d8225f68e5a67e5fd6dc5ee52e1c1d1d4e1e07ce288b25c6bb054c5778fe221feedc99fb0012bc
+Secret message: b'My Secret!'
+```
